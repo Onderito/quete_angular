@@ -1,0 +1,10 @@
+<div class="product">
+  <article class="article" *ngFor="let art of article">
+    <img class="image" [src]="'https://via.placeholder.com/150'" alt="" />
+    <div class="content">
+      <h2 class="title">{{ art.title }}</h2>
+      <p class="description">{{ art.description }}</p>
+      <button class="button">{{ art.button }}</button>
+    </div>
+  </article>
+</div>
