@@ -1,10 +1,1 @@
-.top {
-  display: flex;
-  justify-content: space-between;
-}
 
-.bottom {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 89vh;
-}
