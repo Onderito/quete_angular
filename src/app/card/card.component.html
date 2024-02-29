@@ -1,0 +1,8 @@
+<div class="card">
+  <img class="img" src="{{ card.picture }}" alt="" />
+  <h2>Bonjou {{ card.title }}</h2>
+  <p>Age: {{ card.age }}</p>
+  <p>Citation: {{ card.citation }}</p>
+  <input [(ngModel)]="card.citation" type="text" />
+  <button (click)="onClick()">Braziiiil</button>
+</div>
