@@ -14,7 +14,7 @@ export class CardComponent {
     picture:
       'https://s.france24.com/media/display/d9b51bda-106b-11e9-a881-005056bff430/w:1280/p:4x3/neymar-maillotpsg-m.jpg',
     title: 'Neymar Jr.',
-    age: 30,
+    age: 32,
     citation: '',
   };
 
