@@ -1,0 +1,100 @@
+<form (ngSubmit)="onSubmit()">
+  <fieldset>
+    <label for="email">Email</label>
+    <input
+      [(ngModel)]="user.email"
+      id="email"
+      name="email"
+      type="email"
+      required
+      minlength="5"
+      #email="ngModel"
+    />
+
+    <div *ngIf="(submitted && email.invalid && email.dirty) || email.touched">
+      <div *ngIf="email.errors?.['required']">Email is required</div>
+      <div *ngIf="!email.errors?.['required'] && !isValidEmail(user.email)">
+        Invalid email format
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <label for="Firstname">Firstname</label>
+    <input
+      [(ngModel)]="user.firstname"
+      id="Firstname"
+      name="Firstname"
+      type="text"
+      required
+      minlength="3"
+      maxlength="15"
+      #firstname="ngModel"
+    />
+    <div
+      *ngIf="
+        (submitted && firstname.invalid && firstname.dirty) || firstname.touched
+      "
+    >
+      <div *ngIf="firstname.errors?.['required']">Firstname is required</div>
+      <div *ngIf="firstname.errors?.['minlength']">
+        Name must be at least 4 characters long.
+      </div>
+      <div *ngIf="firstname.errors?.['maxlength']">
+        Name cannot be more than 15 characters long.
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <label for="Lastname">Lastname</label>
+    <input
+      [(ngModel)]="user.lastname"
+      id="Lastname"
+      name="Lastname"
+      type="text"
+      required
+      minlength="3"
+      maxlength="15"
+      #lastname="ngModel"
+    />
+    <div
+      *ngIf="
+        (submitted && lastname.invalid && lastname.dirty) || lastname.touched
+      "
+    >
+      <div *ngIf="lastname.errors?.['required']">lastname is required</div>
+      <div *ngIf="lastname.errors?.['minlength']">
+        Name must be at least 4 characters long.
+      </div>
+      <div *ngIf="lastname.errors?.['maxlength']">
+        Name cannot be more than 15 characters long.
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <label for="password">password</label>
+    <input
+      [(ngModel)]="user.password"
+      id="password"
+      name="password"
+      type="password"
+      required
+      minlength="3"
+      #Password="ngModel"
+    />
+    <div
+      *ngIf="
+        (submitted && Password.invalid && Password.dirty) || Password.touched
+      "
+    >
+      <div *ngIf="Password.errors?.['required']">Password is required</div>
+      <div *ngIf="Password.errors?.['minlength']">
+        Name must be at least 4 characters long.
+      </div>
+    </div>
+  </fieldset>
+
+  <button type="submit">Sauvegarder</button>
+</form>
