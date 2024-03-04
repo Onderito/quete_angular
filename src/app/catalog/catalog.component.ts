@@ -23,8 +23,10 @@ export class CatalogComponent {
     },
   ];
 
+  // array est un tableau de favoris et newFavorite est un nouvel objet de type Favorite
   addToFavorites(array: Favorite[], newFavorite: Favorite) {
     const foundFavorite = array.find((fav) => fav.id === newFavorite.id);
+
     if (foundFavorite) {
       console.log('This product is already in your favorites');
     } else {
