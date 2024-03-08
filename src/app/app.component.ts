@@ -1,13 +1,17 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { ButtonComponent } from './button/button.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, ButtonComponent, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  title = 'Ulas';
+  dataReceiveFromChild(event: string) {
+    console.log(event);
+  }
 }
